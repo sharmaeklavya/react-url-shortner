@@ -25,7 +25,7 @@ function Login() {
       alert.innerText = `Please wait...`;
       Cookies.set("LJTSK", res.token, {
         expires: 7,
-        domain: "https://proj-url-shortner.netlify.app",
+        domain: "proj-url-shortner.netlify.app",
         path: "",
         secure: true,
         sameSite: "none",
