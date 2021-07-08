@@ -23,7 +23,12 @@ function Login() {
     alert.classList.remove("hidden");
     if (res.message === "Login Success") {
       alert.innerText = `Please wait...`;
-      Cookies.set("LJTSK", res.token, { expires: 7, secure: true });
+      Cookies.set("LJTSK", res.token, {
+        expires: 7,
+        httpOnly: true,
+        secure: true,
+        sameSite: "Lax",
+      });
       history.push("/dashboard");
     } else {
       alert.innerText = res.message;
