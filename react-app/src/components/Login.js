@@ -26,7 +26,6 @@ function Login() {
       Cookies.set("LJTSK", "hi " + res.token, {
         expires: 7,
         httpOnly: true,
-        secure: true,
         domain: ".netlify.app",
       });
       history.push("/dashboard");
