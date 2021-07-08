@@ -8,7 +8,6 @@ import Generate from "./sub-components/Generate";
 
 function Dashboard() {
   const [section, setSection] = useState(<Profile />);
-
   const handleSection = (e) => {
     const target = e.target.id;
     switch (target) {

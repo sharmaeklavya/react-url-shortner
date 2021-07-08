@@ -26,8 +26,7 @@ function Login() {
       Cookies.set("LJTSK", res.token, {
         expires: 7,
         secure: true,
-        sameSite: "Lax",
-        httponly: true,
+        sameSite: "lax",
       });
       history.push("/dashboard");
     } else {
