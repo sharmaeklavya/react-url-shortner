@@ -23,10 +23,8 @@ function Login() {
     alert.classList.remove("hidden");
     if (res.message === "Login Success") {
       alert.innerText = `Please wait...`;
-      Cookies.set("LJTSK", "hi " + res.token, {
+      Cookies.set("LJTSK", res.token, {
         expires: 7,
-        domain: ".netlify.app",
-        path: "/",
       });
       history.push("/dashboard");
     } else {
