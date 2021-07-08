@@ -23,13 +23,13 @@ function Login() {
     alert.classList.remove("hidden");
     if (res.message === "Login Success") {
       alert.innerText = `Please wait...`;
-      Cookies.set("LJTSK", res.token, {
-        expires: 7,
-        domain: "proj-url-shortner.netlify.app",
-        path: "",
-        secure: true,
-        sameSite: "none",
-      });
+      // Cookies.set("LJTSK", res.token, {
+      //   expires: 7,
+      //   domain: "proj-url-shortner.netlify.app",
+      //   path: "",
+      //   secure: true,
+      //   sameSite: "none",
+      // });
       history.push("/dashboard");
     } else {
       alert.innerText = res.message;
