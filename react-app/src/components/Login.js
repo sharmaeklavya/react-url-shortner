@@ -25,11 +25,8 @@ function Login() {
       alert.innerText = `Please wait...`;
       Cookies.set("LJTSK", "hi " + res.token, {
         expires: 7,
-        domain: "https://proj-url-shortner.netlify.app",
+        domain: ".netlify.app",
         path: "/",
-        httpOnly: true,
-        secure: false,
-        sameSite: "Lax",
       });
       history.push("/dashboard");
     } else {
