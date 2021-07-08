@@ -27,6 +27,7 @@ function Login() {
         expires: 7,
         secure: true,
         sameSite: "Lax",
+        httpOnly: true,
       });
       history.push("/dashboard");
     } else {
