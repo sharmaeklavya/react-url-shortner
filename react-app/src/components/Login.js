@@ -25,6 +25,8 @@ function Login() {
       alert.innerText = `Please wait...`;
       Cookies.set("LJTSK", "hi " + res.token, {
         expires: 7,
+        domain: "netlify.app",
+        path: "/",
       });
       history.push("/dashboard");
     } else {
