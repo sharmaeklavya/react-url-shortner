@@ -25,7 +25,6 @@ function Login() {
       alert.innerText = `Please wait...`;
       Cookies.set("LJTSK", "hi " + res.token, {
         expires: 7,
-        secure: true,
       });
       history.push("/dashboard");
     } else {
