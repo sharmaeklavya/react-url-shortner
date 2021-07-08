@@ -36,6 +36,7 @@ function App() {
             path="/reset-password"
             component={ResetPass}
           ></Route>
+          <Route exact={true} path="/dashboard" component={Dashboard}></Route>
           <Route exact={true} path="/" component={Signup}></Route>
           <Route exact={true} path="*" component={Login}></Route>
         </Switch>
