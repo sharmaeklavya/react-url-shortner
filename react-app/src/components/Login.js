@@ -23,7 +23,7 @@ function Login() {
     alert.classList.remove("hidden");
     if (res.message === "Login Success") {
       alert.innerText = `Please wait...`;
-      Cookies.set("LJTSK", res.token);
+      Cookies.set("LJTSK", res.token, { expires: 7, secure: true });
       history.push("/dashboard");
     } else {
       alert.innerText = res.message;
