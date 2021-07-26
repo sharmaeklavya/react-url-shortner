@@ -50,7 +50,7 @@ function Urlhistory() {
                   </td>
                   <td>
                     <a href={fetch.shorturl} target="_blank" rel="noreferrer">
-                      {fetch.shorturl.substr(32)}
+                      {fetch.shorturl.substr(38)}
                     </a>
                   </td>
                   <td>{formatDates(fetch.dateCreated)}</td>

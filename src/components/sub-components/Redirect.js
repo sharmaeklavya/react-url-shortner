@@ -1,19 +1,20 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Axios from "axios";
 
 function Redirect() {
   useEffect(() => {
-    const redirect = window.location.pathname;
-    Axios.get(`https://node-mini.herokuapp.com${redirect}`)
-      .then((res) => {
-        window.location = res.data[0].shorturl;
-        return null;
-      })
+    const code = window.location.pathname;
+    Axios.get(`https://node-mini.herokuapp.com${code}`)
+      .then((res) => redirect(res.data[0].shorturl))
       .catch((err) => console.log(err.response));
+
+    const redirect = (url) => {
+      window.location.href = url;
+    };
     return () => console.log("successful");
   }, []);
 
-  return <> </>;
+  return null;
 }
 
 export default Redirect;
