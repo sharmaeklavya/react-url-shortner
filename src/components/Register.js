@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import Topbar from "./sub-components/Topbar";
 import Bottombar from "./sub-components/Bottombar";
 
-function Signup() {
+function Register() {
   const history = useHistory();
   const alert = document.getElementById("alert");
   const [fullName, setFullName] = useState("");
@@ -15,7 +15,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
-      const connect = await fetch("https://node-mini-urls.herokuapp.com", {
+      const connect = await fetch("https://node-mini.herokuapp.com/register", {
         method: "POST",
         body: JSON.stringify({ fullName, email, password }),
         headers: { "Content-Type": "application/json" },
@@ -151,4 +151,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Register;

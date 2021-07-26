@@ -1,10 +1,15 @@
-import Cookies from "js-cookie";
-import { Link } from "react-router-dom";
+import Axios from "axios";
+import { Link, useHistory } from "react-router-dom";
 
 function Topbar(props) {
-  const handleLogout = () => {
-    if (props.value === "Log out") {
-      Cookies.remove("LJTSK");
+  const history = useHistory();
+  const handleLogout = (e) => {
+    if (e.target.innerText === "Log out") {
+      Axios.get("https://node-mini.herokuapp.com/unauth")
+        .then((res) => {
+          if (res.status === 200) history.push("/");
+        })
+        .catch((err) => console.log(err.response));
     }
   };
 

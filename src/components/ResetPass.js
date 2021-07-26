@@ -8,7 +8,7 @@ function ResetPass() {
       <Helmet>
         <title>Reset Password / Mini Urls</title>
       </Helmet>
-      <Topbar value="Login" link="/login"></Topbar>
+      <Topbar value="Login" link="/"></Topbar>
       <div className="container">
         <header></header>
         <div className="row">
