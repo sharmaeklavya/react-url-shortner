@@ -10,6 +10,7 @@ function Redirect() {
         return null;
       })
       .catch((err) => console.log(err.response));
+    return () => console.log("successful");
   }, []);
 
   return <> </>;
