@@ -4,7 +4,6 @@ import Axios from "axios";
 function Generate() {
   const userUrl = document.getElementById("userurl");
   const alert = document.getElementById("alert");
-
   const [longurl, setLongurl] = useState("");
 
   const handleSubmit = (e) => {
@@ -19,6 +18,7 @@ function Generate() {
   };
 
   const handleErrors = (res) => {
+    console.log(res);
     if (res.status === 200) {
       userUrl.classList.remove("hidden");
       alert.innerText = res.data.message;
@@ -49,7 +49,6 @@ function Generate() {
                   onChange={(e) => setLongurl(e.target.value)}
                 />
               </div>
-
               <button type="submit" className="btn btn-primary w-100">
                 Make it tini-tiny
               </button>
