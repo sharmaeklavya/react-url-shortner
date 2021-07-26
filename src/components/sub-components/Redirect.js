@@ -5,7 +5,10 @@ function Redirect() {
   useEffect(() => {
     const redirect = window.location.pathname;
     Axios.get(`https://node-mini.herokuapp.com${redirect}`)
-      .then((res) => (window.location.href = res.data[0].shorturl))
+      .then((res) => {
+        window.location = res.data[0].shorturl;
+        return null;
+      })
       .catch((err) => console.log(err.response));
   }, []);
 
