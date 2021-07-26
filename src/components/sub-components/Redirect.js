@@ -7,7 +7,7 @@ function Redirect() {
     .catch((err) => console.log(err.response));
 
   const redirect = (url) => {
-    window.location.href = url;
+    window.document.location.hash = url;
   };
 
   return null;
