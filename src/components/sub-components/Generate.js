@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 
 function Generate() {
-  const userUrl = document.getElementById("userurl");
+  const userUrl = document.getElementById("user-url");
   const alert = document.getElementById("alert");
   const [longurl, setLongurl] = useState("");
 
@@ -53,7 +53,7 @@ function Generate() {
                 Make it tini-tiny
               </button>
             </form>
-            <div id="userurl" className="my-3 hidden">
+            <div id="user-url" className="my-3 hidden">
               <label htmlFor="outputURL" className="form-label">
                 <i className="fas fa-magic"></i>
                 <span className="ms-3">Copy your mini url here</span>

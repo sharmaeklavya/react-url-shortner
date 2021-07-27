@@ -44,14 +44,14 @@ function Urlhistory() {
               {fetchUrl.map((fetch, index) => (
                 <tr key={fetch._id}>
                   <th scope="row">{index + 1}</th>
-                  <td>
+                  <td className="long-url">
                     <a href={fetch.longurl} target="_blank" rel="noreferrer">
                       {addNewlines(fetch.longurl)}
                     </a>
                   </td>
                   <td>
                     <a href={fetch.shorturl} target="_blank" rel="noreferrer">
-                      {fetch.shorturl}
+                      {fetch.shorturl.substr(32)}
                     </a>
                   </td>
                   <td>{fetch.clicks}</td>
