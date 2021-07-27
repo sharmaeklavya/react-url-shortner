@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { UserProvider } from "./components/Usercontext";
 import PrivateRoute from "./components/PrivateRoute";
-import Redirect from "./components/sub-components/Redirect";
 import UpdatePass from "./components/UpdatePass";
 import ResetPass from "./components/ResetPass";
 import Dashboard from "./components/Dashboard";
@@ -32,7 +31,6 @@ function App() {
               component={ResetPass}
             ></Route>
             <Route exact={true} path="/register" component={Register}></Route>
-            <Route exact={true} path="/:redirect" component={Redirect}></Route>
             <Route exact={true} path="/" component={Login}></Route>
             <Route exact={true} path="*" component={Login}></Route>
           </Switch>
