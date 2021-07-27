@@ -36,6 +36,7 @@ function Urlhistory() {
                 <th scope="col">#</th>
                 <th scope="col">Long Urls</th>
                 <th scope="col">Mini Urls</th>
+                <th scope="col">Total Clicks</th>
                 <th scope="col">Date Created</th>
               </tr>
             </thead>
@@ -53,6 +54,7 @@ function Urlhistory() {
                       {fetch.shorturl}
                     </a>
                   </td>
+                  <td>{fetch.clicks}</td>
                   <td>{formatDates(fetch.dateCreated)}</td>
                 </tr>
               ))}

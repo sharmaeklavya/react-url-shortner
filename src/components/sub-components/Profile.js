@@ -48,7 +48,7 @@ function Profile() {
             <img
               src="/imgs/count.jpg"
               className="card-img-top"
-              alt="monthly-count"
+              alt="total-count"
               style={{ height: "12rem", objectFit: "cover" }}
             />
             <div className="card-body">
