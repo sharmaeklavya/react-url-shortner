@@ -34,7 +34,7 @@ function Generate() {
       <div className="row">
         <h1 className="text-white head">Tiny-tiny Urls </h1>
         <div className="col-lg-12">
-          <div className="url-form mx-auto p-4">
+          <div className="url__form mx-auto p-4">
             <div id="alert" className="lead pb-4"></div>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
@@ -53,7 +53,7 @@ function Generate() {
                 Make it tini-tiny
               </button>
             </form>
-            <div id="user-url" className="my-3 hidden">
+            <div id="user__url" className="my-3 hidden">
               <label htmlFor="outputURL" className="form-label">
                 <i className="fas fa-magic"></i>
                 <span className="ms-3">Copy your mini url here</span>

@@ -12,7 +12,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [waiting, setWaiting] = useState(-1);
-  const { setUsername, isLoggedin, setLoggedin } = useContext(UserContext);
+  const { setUsername, setLoggedin } = useContext(UserContext);
 
   Axios.defaults.withCredentials = true;
 
@@ -40,7 +40,10 @@ function Login() {
   };
 
   useEffect(() => {
-    Axios.get("https://node-mini.herokuapp.com/auth")
+    const source = Axios.CancelToken.source();
+    Axios.get("https://node-mini.herokuapp.com/auth", {
+      cancelToken: source.token,
+    })
       .then((res) => {
         if (res.data.loggedin === true) {
           setLoggedin(res.data.loggedin);
@@ -51,9 +54,13 @@ function Login() {
           setWaiting(0);
         }
       })
-      .catch((err) => console.error(err));
-
-    return () => console.log(isLoggedin);
+      .catch((err) => {
+        if (Axios.isCancel(err)) console.log("Request canceled", err.message);
+        else console.error(err.response);
+      });
+    return () => {
+      source.cancel();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -63,7 +70,7 @@ function Login() {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <figure className="loading-img mx-auto">
+              <figure className="loading__img mx-auto">
                 <img src="/imgs/loading.svg" alt="data being processed" />
               </figure>
             </div>
@@ -77,7 +84,7 @@ function Login() {
           <Topbar value="Sign up" link="/"></Topbar>
           <div className="container">
             <div className="row">
-              <div className="col-lg-12 form-container">
+              <div className="col-lg-12 form__vessel">
                 <form
                   className="row g-3 p-4 mx-auto"
                   style={{ maxWidth: "20rem" }}

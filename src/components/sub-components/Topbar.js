@@ -16,7 +16,7 @@ function Topbar(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <i className="fas fa-link me-3 logo-icon"></i>
+        <i className="fas fa-link me-3 logo__icon"></i>
         <span className="navbar-brand navbar__brand">Mini Urls</span>
         <input type="checkbox" name="checkbox" id="menu" />
         <button className="navbar-toggler">

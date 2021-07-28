@@ -12,7 +12,7 @@ function ResetPass() {
       <div className="container">
         <header></header>
         <div className="row">
-          <div className="col-lg-12 form-container">
+          <div className="col-lg-12 form__vessel">
             <form className="row g-3 p-4 mx-auto" style={{ width: "20rem" }}>
               <h1 className="h2 p-2">Reset Password</h1>
               <div className="mb-3 col-md-12">

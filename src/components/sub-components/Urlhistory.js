@@ -29,13 +29,13 @@ function Urlhistory() {
       <h1 className="text-white head">Recent URLs </h1>
       <div className="col-lg-12">
         {fetchUrl.length > 0 ? (
-          <table className="url-table table caption-top mx-auto">
+          <table className="url__table table caption-top mx-auto">
             <caption className="lead">List of URLs</caption>
             <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Long Urls</th>
-                <th scope="col">Mini Urls</th>
+                <th scope="col">Short Urls</th>
                 <th scope="col">Total Clicks</th>
                 <th scope="col">Date Created</th>
               </tr>
@@ -44,7 +44,7 @@ function Urlhistory() {
               {fetchUrl.map((fetch, index) => (
                 <tr key={fetch._id}>
                   <th scope="row">{index + 1}</th>
-                  <td className="long-url">
+                  <td className="long__url">
                     <a href={fetch.longurl} target="_blank" rel="noreferrer">
                       {addNewlines(fetch.longurl)}
                     </a>
@@ -61,7 +61,7 @@ function Urlhistory() {
             </tbody>
           </table>
         ) : (
-          <figure className="loading-img mx-auto">
+          <figure className="loading__img mx-auto">
             <img src="/imgs/loading_url.svg" alt="data being processed" />
           </figure>
         )}

@@ -42,7 +42,6 @@ function Profile() {
             </div>
           </div>
         </div>
-
         <div className="col-lg-6">
           <div className="card card__ my-3 me-auto" style={{ width: "18rem" }}>
             <img

@@ -2,7 +2,7 @@ body {
   background-image: linear-gradient(to top, #4ca1af, #c4e0e5);
 }
 
-.logo-icon {
+.logo__icon {
   font-size: 2rem;
 }
 
@@ -43,7 +43,8 @@ input:checked ~ #menu-content {
   text-decoration: none;
 }
 
-.nav__item:hover {
+.nav__item:focus {
+  text-align: left;
   color: inherit;
   background-color: rgba(37, 99, 235, 0.2);
 }
@@ -56,15 +57,12 @@ input:checked ~ #menu-content {
   color: inherit;
 }
 
-.loading-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: auto;
+.button {
+  border: none;
+  background-color: tomato;
 }
 
-.bulb-img {
+.bulb__img {
   max-width: 400px;
   height: 550px;
   margin: auto;
@@ -76,10 +74,17 @@ img {
   height: 100%;
 }
 
-.form-container {
-  min-height: 600px;
-  display: grid;
-  place-items: center;
+.loading__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+}
+
+.dash__vessel {
+  min-height: 580px;
+  background: linear-gradient(110deg, #141e30 30%, #243b55 30%);
 }
 
 form {
@@ -89,14 +94,21 @@ form {
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-.button {
-  border: none;
-  background-color: tomato;
+.form__vessel {
+  min-height: 600px;
+  display: grid;
+  place-items: center;
 }
 
-.dash-container {
-  min-height: 580px;
-  background: linear-gradient(110deg, #141e30 30%, #243b55 30%);
+.url__form {
+  width: 20rem;
+  height: 20rem;
+  display: grid;
+  place-content: center;
+  border-radius: 8px;
+  background-color: whitesmoke;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .head {
@@ -111,18 +123,7 @@ form {
   text-align: center;
 }
 
-.url-form {
-  width: 20rem;
-  height: 20rem;
-  display: grid;
-  place-content: center;
-  border-radius: 8px;
-  background-color: whitesmoke;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.url-table {
+.url__table {
   max-width: 630px;
   height: 400px;
   margin: 1rem auto;
@@ -134,15 +135,33 @@ form {
   overflow-x: hidden;
 }
 
-#user-url {
+#user__url {
   overflow-y: auto;
   overflow-x: hidden;
   word-wrap: break-word;
 }
 
-.long-url {
+.long__url {
   max-width: 260px;
   word-wrap: break-word;
+}
+
+td a:link {
+  color: #141e30;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+td a:visited {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+td a:hover {
+  color: rgb(53, 124, 211);
+  background-color: transparent;
+  text-decoration: none;
 }
 
 .footer {

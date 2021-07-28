@@ -39,7 +39,7 @@ function Register() {
       handleAlerts("alert-success");
       alert.innerText = "User registration successful";
       setTimeout(() => {
-        history.push("/login");
+        history.push("/");
       }, 500);
     }
   };
@@ -57,12 +57,12 @@ function Register() {
       <Topbar value="Login" link="/login"></Topbar>
       <div className="container">
         <div className="row">
-          <div className="col-lg-6 form-container">
-            <div className="bulb-img">
+          <div className="col-lg-6 form__vessel">
+            <div className="bulb__img">
               <img src="/imgs/light-bulb.jpg" alt="light-bulb" />
             </div>
           </div>
-          <div className="col-lg-6 form-container">
+          <div className="col-lg-6 form__vessel">
             <form
               className="row g-3 mx-auto p-4"
               style={{ maxWidth: "24rem" }}
@@ -134,7 +134,7 @@ function Register() {
                   required
                 />
                 <label className="form-check-label" htmlFor="check">
-                  I agree to the T&C
+                  I agree to the T&amp;C
                 </label>
               </div>
               <div className="mb-3 col-md-6">

@@ -8,10 +8,10 @@ function UpdatePass() {
       <Helmet>
         <title>Update Password / Mini Urls</title>
       </Helmet>
-      <Topbar value="Login" link="/login"></Topbar>
+      <Topbar value="Login" link="/"></Topbar>
       <div className="container">
         <div className="row">
-          <div className="col-lg-12 form-container">
+          <div className="col-lg-12 form__vessel">
             <form className="row g-3 p-4 mx-auto" style={{ width: "20rem" }}>
               <h1 className="h2 p-2">Update Password</h1>
 
