@@ -19,6 +19,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      alert.classList.remove("hidden");
       const response = await Axios.post("https://node-mini.herokuapp.com", {
         email,
         password,
