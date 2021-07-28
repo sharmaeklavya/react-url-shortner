@@ -21,7 +21,7 @@ function App() {
               component={Dashboard}
             ></PrivateRoute>
             <Route
-              path="/update-password:rstring"
+              path="/update-password/:rstring"
               component={UpdatePass}
               exact={true}
             ></Route>
