@@ -9,7 +9,7 @@ function Topbar(props) {
         .then((res) => {
           if (res.status === 200) history.push("/");
         })
-        .catch((err) => console.log(err.response));
+        .catch((err) => console.error(err.response));
     }
   };
 
@@ -28,9 +28,9 @@ function Topbar(props) {
           <ul className="navbar-nav navbar__nav">
             <li className="nav-item nav__item">Features</li>
             <Link
-              className="link nav__item"
-              to={props.link}
+              className="nav-item nav__item"
               onClick={handleLogout}
+              to={props.link}
             >
               {props.value}
             </Link>

@@ -1,8 +1,13 @@
+import { useContext } from "react";
+import { Helmet } from "react-helmet-async";
+import UserContext from "./Usercontext";
 import Topbar from "./sub-components/Topbar";
 import Bottombar from "./sub-components/Bottombar";
-import { Helmet } from "react-helmet-async";
 
 function UpdatePass() {
+  const { verifiedEmail } = useContext(UserContext);
+  console.log(verifiedEmail);
+
   return (
     <>
       <Helmet>
@@ -14,7 +19,6 @@ function UpdatePass() {
           <div className="col-lg-12 form__vessel">
             <form className="row g-3 p-4 mx-auto" style={{ width: "20rem" }}>
               <h1 className="h2 p-2">Update Password</h1>
-
               <div className="mb-3 col-md-12">
                 <label htmlFor="inputPassword1" className="form-label">
                   Password

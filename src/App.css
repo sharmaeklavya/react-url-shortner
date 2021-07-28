@@ -49,12 +49,10 @@ input:checked ~ #menu-content {
   background-color: rgba(37, 99, 235, 0.2);
 }
 
-.link {
-  text-decoration: none;
-}
-
-.link:hover {
+.nav__item:hover {
+  text-align: left;
   color: inherit;
+  background-color: rgba(37, 99, 235, 0.2);
 }
 
 .button {

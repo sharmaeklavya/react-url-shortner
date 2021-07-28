@@ -54,7 +54,7 @@ function Register() {
       <Helmet>
         <title>Sign up / Mini Urls</title>
       </Helmet>
-      <Topbar value="Login" link="/login"></Topbar>
+      <Topbar value="Login" link="/"></Topbar>
       <div className="container">
         <div className="row">
           <div className="col-lg-6 form__vessel">

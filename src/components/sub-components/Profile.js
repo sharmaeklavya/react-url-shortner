@@ -10,7 +10,7 @@ function Profile() {
   useEffect(() => {
     Axios.get("https://node-mini.herokuapp.com/fetch")
       .then((res) => handleTotalUrls(res.data))
-      .catch((err) => console.log(err.response));
+      .catch((err) => console.error(err.response));
   }, []);
 
   const handleTotalUrls = (res) => {

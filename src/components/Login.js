@@ -16,18 +16,17 @@ function Login() {
 
   Axios.defaults.withCredentials = true;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert.classList.remove("hidden");
-    Axios.post("https://node-mini.herokuapp.com", {
-      email,
-      password,
-    })
-      .then((res) => {
-        handleErrors(res);
-        setUsername(res.data.user.fullName);
-      })
-      .catch((err) => handleErrors(err.response.data));
+    try {
+      const response = await Axios.post("https://node-mini.herokuapp.com", {
+        email,
+        password,
+      });
+      handleErrors(response);
+    } catch (error) {
+      handleErrors(error.response.data);
+    }
   };
 
   const handleErrors = (res) => {
@@ -81,7 +80,7 @@ function Login() {
           <Helmet>
             <title>Login / Mini Urls</title>
           </Helmet>
-          <Topbar value="Sign up" link="/"></Topbar>
+          <Topbar value="Sign up" link="/register"></Topbar>
           <div className="container">
             <div className="row">
               <div className="col-lg-12 form__vessel">
