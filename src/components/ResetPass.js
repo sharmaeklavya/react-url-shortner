@@ -23,7 +23,7 @@ function ResetPass() {
   const handleErrors = (res) => {
     if (res.status === 200) {
       alert.innerText = "Please check your email to verify";
-      history.push("/update-password");
+      history.push("/");
     } else {
       alert.innerText = res.data.message;
     }
