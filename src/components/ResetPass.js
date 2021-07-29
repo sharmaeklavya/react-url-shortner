@@ -22,7 +22,7 @@ function ResetPass() {
   const handleErrors = (res) => {
     alert.classList.remove("hidden");
     if (res.status === 200) {
-      alert.innerText = "Please check your email to verify";
+      alert.innerText = "Please check your email to verify your identity";
       setTimeout(() => {
         history.push("/");
       }, 2000);
