@@ -8,7 +8,6 @@ import Bottombar from "./sub-components/Bottombar";
 function UpdatePass() {
   const param = useParams();
   const history = useHistory();
-  const alert = document.getElementById("alert");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -26,7 +25,7 @@ function UpdatePass() {
   };
 
   const handleErrors = (res) => {
-    alert.classList.remove("hidden");
+    const alert = document.getElementById("alert").classList.remove("hidden");
     if (res.status === 200) {
       alert.innerText = "New password updated";
       setTimeout(() => {
