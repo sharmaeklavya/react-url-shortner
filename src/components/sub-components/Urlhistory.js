@@ -5,9 +5,17 @@ function Urlhistory() {
   const [fetchUrl, setFetchUrl] = useState([]);
 
   useEffect(() => {
+    const alert = document.getElementById("alert");
     Axios.get("https://node-mini.herokuapp.com/fetch")
-      .then((res) => setFetchUrl(res.data))
+      .then((res) => {
+        if (res.data.length > 0) setFetchUrl(res.data);
+        else {
+          alert.classList.remove("hidden");
+          alert.innerText = "No data available";
+        }
+      })
       .catch((err) => console.log(err.response));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const formatDates = (param) => {
@@ -28,6 +36,11 @@ function Urlhistory() {
     <div className="row">
       <h1 className="text-white head">Recent URLs </h1>
       <div className="col-lg-12">
+        <div
+          id="alert"
+          className="alert alert-warning no-data hidden"
+          role="alert"
+        ></div>
         {fetchUrl.length > 0 ? (
           <table className="url__table table caption-top mx-auto">
             <caption className="lead">List of URLs</caption>
@@ -61,7 +74,7 @@ function Urlhistory() {
             </tbody>
           </table>
         ) : (
-          <figure className="loading__img mx-auto">
+          <figure className="loading__img circle">
             <img src="/imgs/loading_url.svg" alt="data being processed" />
           </figure>
         )}

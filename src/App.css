@@ -80,6 +80,10 @@ img {
   margin: auto;
 }
 
+.circle {
+  transform: translate(30%);
+}
+
 .dash__vessel {
   min-height: 580px;
   background: linear-gradient(110deg, #141e30 30%, #243b55 30%);
@@ -119,6 +123,11 @@ form {
 
 #alert {
   text-align: center;
+}
+
+.no-data {
+  width: 20rem;
+  transform: translate(100%);
 }
 
 .url__table {

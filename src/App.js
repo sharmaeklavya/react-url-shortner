@@ -20,17 +20,17 @@ function App() {
               path="/dashboard"
               component={Dashboard}
             ></PrivateRoute>
-            <Route
-              path="/update-password/:rstring"
-              component={UpdatePass}
-              exact={true}
-            ></Route>
+            <Route exact={true} path="/register" component={Register}></Route>
             <Route
               exact={true}
               path="/reset-password"
               component={ResetPass}
             ></Route>
-            <Route exact={true} path="/register" component={Register}></Route>
+            <Route
+              path="/update-password/:rstring"
+              component={UpdatePass}
+              exact={true}
+            ></Route>
             <Route exact={true} path="/" component={Login}></Route>
             <Route exact={true} path="*" component={Login}></Route>
           </Switch>

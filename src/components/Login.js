@@ -19,7 +19,6 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      alert.classList.remove("hidden");
       const response = await Axios.post("https://node-mini.herokuapp.com", {
         email,
         password,
@@ -31,6 +30,7 @@ function Login() {
   };
 
   const handleErrors = (res) => {
+    alert.classList.remove("hidden");
     if (res.status === 200) {
       alert.innerText = `Please wait...`;
       history.push("/dashboard");
@@ -40,10 +40,7 @@ function Login() {
   };
 
   useEffect(() => {
-    const source = Axios.CancelToken.source();
-    Axios.get("https://node-mini.herokuapp.com/auth", {
-      cancelToken: source.token,
-    })
+    Axios.get("https://node-mini.herokuapp.com/auth")
       .then((res) => {
         if (res.data.loggedin === true) {
           setLoggedin(res.data.loggedin);
@@ -54,15 +51,9 @@ function Login() {
           setWaiting(0);
         }
       })
-      .catch((err) => {
-        if (Axios.isCancel(err)) console.log("Request canceled", err.message);
-        else console.error(err.response);
-      });
-    return () => {
-      source.cancel();
-    };
+      .catch((err) => console.log(err.response));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [setUsername]);
 
   return (
     <>
@@ -90,7 +81,7 @@ function Login() {
                   style={{ maxWidth: "20rem" }}
                   onSubmit={handleSubmit}
                 >
-                  <h1 className="h2 p-2">Login</h1>
+                  <h1 className="lead p-2">Login</h1>
                   <div
                     id="alert"
                     className="alert alert-warning hidden"

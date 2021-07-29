@@ -12,7 +12,6 @@ function ResetPass() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert.classList.remove("hidden");
     Axios.post("https://node-mini.herokuapp.com/reset", {
       email,
     })
@@ -21,9 +20,12 @@ function ResetPass() {
   };
 
   const handleErrors = (res) => {
+    alert.classList.remove("hidden");
     if (res.status === 200) {
       alert.innerText = "Please check your email to verify";
-      history.push("/");
+      setTimeout(() => {
+        history.push("/");
+      }, 2000);
     } else {
       alert.innerText = res.data.message;
     }
@@ -43,7 +45,7 @@ function ResetPass() {
               style={{ width: "20rem" }}
               onSubmit={handleSubmit}
             >
-              <h1 className="h2 p-2">Reset Password</h1>
+              <h1 className="lead p-2">Reset Password</h1>
               <div
                 id="alert"
                 className="alert alert-warning hidden"

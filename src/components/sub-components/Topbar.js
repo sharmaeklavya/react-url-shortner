@@ -3,13 +3,20 @@ import { Link, useHistory } from "react-router-dom";
 
 function Topbar(props) {
   const history = useHistory();
-  const handleLogout = (e) => {
-    if (e.target.innerText === "Log out") {
-      Axios.get("https://node-mini.herokuapp.com/unauth")
-        .then((res) => {
-          if (res.status === 200) history.push("/");
-        })
-        .catch((err) => console.error(err.response));
+
+  const handleLogout = async (e) => {
+    try {
+      if (e.target.innerText === "Log out") {
+        const res = await Axios.get("https://node-mini.herokuapp.com/unauth");
+        if (res.status === 200) {
+          console.log("Log out");
+          history.push("/");
+        } else {
+          history.push("/dashboard");
+        }
+      }
+    } catch (err) {
+      console.error(err.response);
     }
   };
 

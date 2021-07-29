@@ -68,7 +68,7 @@ function Register() {
               style={{ maxWidth: "24rem" }}
               onSubmit={handleSubmit}
             >
-              <h1 className="h2 p-2">Sign up</h1>
+              <h1 className="lead p-2">Sign up</h1>
               {/* Alerts */}
               <div id="alert" className="hidden" role="alert"></div>
               <div className="mb-3 col-md-6">
