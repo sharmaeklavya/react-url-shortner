@@ -28,12 +28,14 @@ function UpdatePass() {
   };
 
   const handleErrors = (res) => {
+    // show/hide alerts
     const alert = document.getElementById("alert");
     alert.classList.remove("hidden");
+    // response
     if (res.status === 200) {
       alert.innerText = "New password updated";
       setTimeout(() => {
-        history.pushState("/");
+        history.push("/");
       }, 2000);
     } else {
       alert.innerText = res.data.message;
@@ -68,6 +70,7 @@ function UpdatePass() {
                   type="password"
                   className="form-control"
                   id="inputPassword1"
+                  minLength="6"
                   required
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -80,6 +83,7 @@ function UpdatePass() {
                   type="password"
                   className="form-control"
                   id="inputPassword2"
+                  minLength="6"
                   required
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
