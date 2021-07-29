@@ -8,11 +8,13 @@ import Bottombar from "./sub-components/Bottombar";
 function UpdatePass() {
   const param = useParams();
   const history = useHistory();
+  const alert = document.getElementById("alert");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    alert.classList.remove("hidden");
     if (password === confirmPassword) {
       Axios.post(`https://node-mini.herokuapp.com/update/${param.rstring}`, {
         password: password,
@@ -28,10 +30,6 @@ function UpdatePass() {
   };
 
   const handleErrors = (res) => {
-    // show/hide alerts
-    const alert = document.getElementById("alert");
-    alert.classList.remove("hidden");
-    // response
     if (res.status === 200) {
       alert.innerText = "New password updated";
       setTimeout(() => {
@@ -54,7 +52,7 @@ function UpdatePass() {
             <form
               className="row g-3 p-4 mx-auto"
               style={{ width: "20rem" }}
-              onClick={handleSubmit}
+              onSubmit={handleSubmit}
             >
               <h1 className="lead p-2">Update Password</h1>
               <div
@@ -71,8 +69,8 @@ function UpdatePass() {
                   className="form-control"
                   id="inputPassword1"
                   minLength="6"
-                  required
                   onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </div>
               <div className="mb-3 col-md-12">
@@ -84,8 +82,8 @@ function UpdatePass() {
                   className="form-control"
                   id="inputPassword2"
                   minLength="6"
-                  required
                   onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
                 />
               </div>
               <div className="mb-3 col-md-12">

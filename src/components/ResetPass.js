@@ -65,7 +65,6 @@ function ResetPass() {
                   Reset
                 </button>
               </div>
-              <div id="ntfy" className="h6 alert alert-info hidden"></div>
             </form>
           </div>
         </div>
