@@ -1,12 +1,10 @@
 import { useState } from "react";
 import Axios from "axios";
-import { useHistory } from "react-router";
 import { Helmet } from "react-helmet-async";
 import Topbar from "./sub-components/Topbar";
 import Bottombar from "./sub-components/Bottombar";
 
 function ResetPass() {
-  const history = useHistory();
   const [email, setEmail] = useState("");
   const alert = document.getElementById("alert");
 
@@ -22,10 +20,8 @@ function ResetPass() {
   const handleErrors = (res) => {
     alert.classList.remove("hidden");
     if (res.status === 200) {
-      alert.innerText = "Please check your email to verify your identity";
-      setTimeout(() => {
-        history.push("/");
-      }, 2000);
+      alert.innerText =
+        "We have sent you an email. Please check and confirm your identity.";
     } else {
       alert.innerText = res.data.message;
     }
@@ -48,7 +44,7 @@ function ResetPass() {
               <h1 className="lead p-2">Reset Password</h1>
               <div
                 id="alert"
-                className="alert alert-warning hidden"
+                className="alert alert-info hidden"
                 role="alert"
               ></div>
               <div className="mb-3 col-md-12">
@@ -69,6 +65,7 @@ function ResetPass() {
                   Reset
                 </button>
               </div>
+              <div id="ntfy" className="h6 alert alert-info hidden"></div>
             </form>
           </div>
         </div>
