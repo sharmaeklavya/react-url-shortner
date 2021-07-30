@@ -31,7 +31,7 @@ function Dashboard() {
         <title>Dashboard / Mini Urls</title>
       </Helmet>
       <Topbar value="Log out" link="/"></Topbar>
-      <div className="dash__vessel">
+      <div className="dash__vessel py-2">
         <div className="container">
           <div className="row">
             <div className="col-lg-3 d-flex justify-content-center align-items-center">

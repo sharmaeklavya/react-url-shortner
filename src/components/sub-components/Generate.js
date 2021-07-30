@@ -32,7 +32,7 @@ function Generate() {
       <div className="row">
         <h1 className="text-white head">Tiny-tiny Urls </h1>
         <div className="col-lg-12">
-          <div className="url__form mx-auto p-4">
+          <div className="url__form my-3 mx-auto p-4">
             <div id="ntfy" className="lead pb-4 text-center"></div>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
