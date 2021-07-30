@@ -1,6 +1,14 @@
-body {
-  background-image: linear-gradient(to top, #4ca1af, #c4e0e5);
+html {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: linear-gradient(to top, #4ca1af, #c4e0e5);
 }
 
 .logo__icon {
@@ -131,7 +139,7 @@ form {
 }
 
 .url__table {
-  max-width: 600px;
+  max-width: calc(70% - 50px);
   height: 400px;
   margin: 1rem auto;
   padding: 1.5rem;
@@ -186,9 +194,6 @@ td a:hover {
 @media (max-width: 991px) {
   .head {
     text-align: center;
-  }
-  .url__table {
-    width: 320px;
   }
   .card__ {
     margin: auto;
