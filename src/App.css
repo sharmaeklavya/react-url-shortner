@@ -188,7 +188,7 @@ td a:hover {
     text-align: center;
   }
   .url__table {
-    max-width: 400px;
+    width: 300px;
   }
   .card__ {
     margin: auto;
