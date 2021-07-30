@@ -73,9 +73,8 @@ function Login() {
           <Helmet>
             <title>Login / Mini Urls</title>
           </Helmet>
-
+          <Topbar value="Sign up" link="/register"></Topbar>
           <div className="container">
-            <Topbar value="Sign up" link="/register"></Topbar>
             <div className="row">
               <div className="col-lg-12 form__vessel">
                 <form
