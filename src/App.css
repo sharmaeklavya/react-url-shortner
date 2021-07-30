@@ -1,5 +1,6 @@
 body {
   background-image: linear-gradient(to top, #4ca1af, #c4e0e5);
+  box-sizing: border-box;
 }
 
 .logo__icon {
@@ -30,7 +31,6 @@ input:checked ~ #menu-content {
 }
 
 .nav__item {
-  margin-left: 0.5rem;
   padding: 0.5rem 0.75rem;
   margin: 0.5rem;
   background-color: tomato;
@@ -62,7 +62,6 @@ input:checked ~ #menu-content {
 
 .bulb__img {
   max-width: 400px;
-  height: 550px;
   margin: auto;
   clip-path: circle(50%);
 }
@@ -77,7 +76,6 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin: auto;
 }
 
 .circle {
@@ -85,7 +83,9 @@ img {
 }
 
 .dash__vessel {
-  min-height: 580px;
+  min-height: 83vmin;
+  display: grid;
+  place-items: center;
   background: linear-gradient(110deg, #141e30 30%, #243b55 30%);
 }
 
@@ -97,7 +97,7 @@ form {
 }
 
 .form__vessel {
-  min-height: 600px;
+  height: 83vh;
   display: grid;
   place-items: center;
 }

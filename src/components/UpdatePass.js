@@ -14,7 +14,6 @@ function UpdatePass() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert.classList.remove("hidden");
     if (password === confirmPassword) {
       Axios.post(`https://node-mini.herokuapp.com/update/${param.rstring}`, {
         password: password,
@@ -25,11 +24,13 @@ function UpdatePass() {
         })
         .catch((err) => handleErrors(err.response));
     } else {
+      alert.classList.remove("hidden");
       alert.innerText = "Password does not match";
     }
   };
 
   const handleErrors = (res) => {
+    alert.classList.remove("hidden");
     if (res.status === 200) {
       alert.innerText = "New password updated";
       setTimeout(() => {

@@ -34,32 +34,27 @@ function Dashboard() {
       <div className="dash__vessel">
         <div className="container">
           <div className="row">
-            <div className="col-lg-3">
+            <div className="col-lg-3 d-flex justify-content-center align-items-center">
               <div
-                className="d-flex flex-column flex-shrink-0 mx-auto text-dark"
-                style={{ width: "250px" }}
+                className="nav nav-pills flex-column text-white"
+                onClick={handleSection}
               >
-                <div
-                  className="nav nav-pills flex-column text-white mt-5"
-                  onClick={handleSection}
-                >
-                  <button className="nav__item mb-3" id="profile">
-                    <i className="far fa-user me-3"></i>
-                    Profile
-                  </button>
-                  <button className="nav__item mb-3" id="generate">
-                    <i className="fas fa-link me-3"></i>
-                    Generate URLs
-                  </button>
-                  <button className="nav__item mb-3" id="history">
-                    <i className="fas fa-history me-3"></i>
-                    Recent URLs
-                  </button>
-                </div>
+                <button className="nav__item mb-3" id="profile">
+                  <i className="far fa-user me-3"></i>
+                  Profile
+                </button>
+                <button className="nav__item mb-3" id="generate">
+                  <i className="fas fa-link me-3"></i>
+                  Generate URLs
+                </button>
+                <button className="nav__item mb-3" id="history">
+                  <i className="fas fa-history me-3"></i>
+                  Recent URLs
+                </button>
               </div>
             </div>
             <div className="col-lg-9">
-              <main className="my-5">{section}</main>
+              <main>{section}</main>
             </div>
           </div>
         </div>

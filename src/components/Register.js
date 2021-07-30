@@ -64,7 +64,7 @@ function Register() {
           </div>
           <div className="col-lg-6 form__vessel">
             <form
-              className="row g-3 mx-auto p-4"
+              className="row g-3 mx-auto mb-3 p-4"
               style={{ maxWidth: "24rem" }}
               onSubmit={handleSubmit}
             >
@@ -82,6 +82,7 @@ function Register() {
                   aria-describedby="fullName"
                   onChange={(e) => setFullName(e.target.value)}
                   value={fullName}
+                  required
                 />
               </div>
               <div className="mb-3 col-md-6">
@@ -95,6 +96,7 @@ function Register() {
                   aria-describedby="emailHelp"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
+                  required
                 />
               </div>
               <div className="mb-3 col-md-6">
@@ -126,7 +128,7 @@ function Register() {
               <div id="emailHelp" className="form-text">
                 We'll never share your information with anyone else.
               </div>
-              <div className="mb-3 col-md-6 form-check">
+              <div className="mb-3 col-md-12 form-check">
                 <input
                   type="checkbox"
                   className="form-check-input"
@@ -134,10 +136,11 @@ function Register() {
                   required
                 />
                 <label className="form-check-label" htmlFor="check">
-                  I agree to the T&amp;C
+                  I confirm that I have entered a valid email and also agree to
+                  the T&amp;C.
                 </label>
               </div>
-              <div className="mb-3 col-md-6">
+              <div className="mb-2 col-md-6">
                 <button type="submit" className="button btn btn-primary w-100">
                   Submit
                 </button>
