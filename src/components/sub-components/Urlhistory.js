@@ -44,6 +44,12 @@ function Urlhistory() {
         {fetchUrl.length > 0 ? (
           <table className="url__table table caption-top mx-auto">
             <caption className="lead">List of URLs</caption>
+            <caption className="bg-success bg-gradient text-light rounded">
+              <span className="ms-2">
+                Click on the URL to visit or right click and copy link to use it
+                from anywhere
+              </span>
+            </caption>
             <thead>
               <tr>
                 <th scope="col">#</th>
