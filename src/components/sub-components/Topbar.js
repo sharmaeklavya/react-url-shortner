@@ -5,21 +5,19 @@ function Topbar(props) {
   const history = useHistory();
 
   const handleLogout = async (e) => {
-    try {
-      if (e.target.innerText === "Log out") {
+    if (e.target.innerText === "Log out") {
+      try {
         const res = await Axios.get("https://node-mini.herokuapp.com/unauth");
         handleErrors(res);
+      } catch (err) {
+        console.error(err.response);
       }
-    } catch (err) {
-      console.error(err.response);
     }
   };
 
   const handleErrors = (res) => {
     if (res.status === 200) {
       history.push("/");
-    } else {
-      history.push("/dashboard");
     }
   };
 

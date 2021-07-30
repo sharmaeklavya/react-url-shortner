@@ -16,16 +16,13 @@ function Generate() {
   };
 
   const handleErrors = (res) => {
-    const shortUrl = document.getElementById("short__url");
     const alert = document.getElementById("ntfy");
-
+    alert.classList.remove("hidden");
     // Condition depending on response
     if (res.status === 200) {
-      shortUrl.classList.remove("hidden");
-      alert.innerText = res.data.message;
+      alert.innerHTML = `${res.data.message}
+      <p id="alert" class="alert-success">Check the created url in recent tab </p>`;
     } else {
-      alert.classList.remove("hidden");
-      shortUrl.classList.add("hidden");
       alert.innerText = res.data.message;
     }
   };
@@ -54,21 +51,6 @@ function Generate() {
                 Make it tini-tiny
               </button>
             </form>
-            <div id="short__url" className="my-3 hidden">
-              <label htmlFor="outputURL" className="form-label">
-                <i className="fas fa-magic"></i>
-                <span className="ms-3">Copy your mini url here</span>
-              </label>
-              <a
-                href={longurl}
-                className="form-control"
-                id="outputURL"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {longurl}
-              </a>
-            </div>
           </div>
         </div>
       </div>
