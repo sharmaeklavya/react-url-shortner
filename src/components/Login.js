@@ -24,6 +24,7 @@ function Login() {
         password,
       });
       handleErrors(response);
+      setUsername(response.data.user);
     } catch (error) {
       handleErrors(error.response.data);
     }
@@ -53,7 +54,7 @@ function Login() {
       })
       .catch((err) => console.log(err.response));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setUsername]);
+  }, []);
 
   return (
     <>
@@ -72,8 +73,9 @@ function Login() {
           <Helmet>
             <title>Login / Mini Urls</title>
           </Helmet>
-          <Topbar value="Sign up" link="/register"></Topbar>
+
           <div className="container">
+            <Topbar value="Sign up" link="/register"></Topbar>
             <div className="row">
               <div className="col-lg-12 form__vessel">
                 <form

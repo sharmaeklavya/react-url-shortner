@@ -145,7 +145,7 @@ form {
   overflow-x: hidden;
 }
 
-#user__url {
+#short__url {
   overflow-y: auto;
   overflow-x: hidden;
   word-wrap: break-word;

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Axios from "axios";
 
 function Generate() {
-  const userUrl = document.getElementById("user-url");
-  const alert = document.getElementById("alert");
   const [longurl, setLongurl] = useState("");
 
   const handleSubmit = (e) => {
@@ -18,13 +16,16 @@ function Generate() {
   };
 
   const handleErrors = (res) => {
-    console.log(res);
+    const shortUrl = document.getElementById("short__url");
+    const alert = document.getElementById("ntfy");
+
+    // Condition depending on response
     if (res.status === 200) {
-      userUrl.classList.remove("hidden");
+      shortUrl.classList.remove("hidden");
       alert.innerText = res.data.message;
     } else {
       alert.classList.remove("hidden");
-      userUrl.classList.add("hidden");
+      shortUrl.classList.add("hidden");
       alert.innerText = res.data.message;
     }
   };
@@ -35,7 +36,7 @@ function Generate() {
         <h1 className="text-white head">Tiny-tiny Urls </h1>
         <div className="col-lg-12">
           <div className="url__form mx-auto p-4">
-            <div id="alert" className="lead pb-4"></div>
+            <div id="ntfy" className="lead pb-4 text-center"></div>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="inputURL" className="form-label">
@@ -53,7 +54,7 @@ function Generate() {
                 Make it tini-tiny
               </button>
             </form>
-            <div id="user__url" className="my-3 hidden">
+            <div id="short__url" className="my-3 hidden">
               <label htmlFor="outputURL" className="form-label">
                 <i className="fas fa-magic"></i>
                 <span className="ms-3">Copy your mini url here</span>

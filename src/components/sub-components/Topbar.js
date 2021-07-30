@@ -8,15 +8,18 @@ function Topbar(props) {
     try {
       if (e.target.innerText === "Log out") {
         const res = await Axios.get("https://node-mini.herokuapp.com/unauth");
-        if (res.status === 200) {
-          console.log("Log out");
-          history.push("/");
-        } else {
-          history.push("/dashboard");
-        }
+        handleErrors(res);
       }
     } catch (err) {
       console.error(err.response);
+    }
+  };
+
+  const handleErrors = (res) => {
+    if (res.status === 200) {
+      history.push("/");
+    } else {
+      history.push("/dashboard");
     }
   };
 
